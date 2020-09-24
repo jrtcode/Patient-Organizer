@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load bootstrap3 %}
+{% block title %}Sign Up Now!{% endblock %}
+{% block content %}
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Sign Up:</h1>
+      <hr class="my-4">
+      <form method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <input type="submit" class="btn btn-primary" value="Sign-Up!">
+      </form>
+    </div>
+
+  </div>
+
+{% endblock %}
