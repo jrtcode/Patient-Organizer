@@ -44,15 +44,15 @@
       <div class="menu">
         <div>
           <div>
+            <p>user_id:{{user.id}}</p>
             <ul>
-              <li><a href="{% url "accounts:logout" %}">Logout</a></li>
-              <li><a href="#">Home</a></li>
+              <li><a href="{% url 'home' %}">Home</a></li>
               <li><a href="#">Calendar</a></li>
-              <li><a href="#">Medications</a></li>
-              <li><a href="#">Doctors</a></li>
+              <li><a href="{% url 'info:info' %}">Info</a></li>
+              <li><a href="#">Events</a></li>
               <li><a href="#">Treatment</a></li>
               <li><a href="#">Appointments</a></li>
-              <li><a href="#">Medical Docs</a></li>
+              <li><a href="{% url "accounts:logout" %}">Logout</a></li>
             </ul>
           </div>
         </div>

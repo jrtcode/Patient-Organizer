@@ -39,7 +39,7 @@ body {
 
 .showcase:before {
   content: '';
-  background: url('../images/pexels-polina-tankilevitch-4110186.jpg') no-repeat
+  background: url('../images/pexels-pixabay-159211.jpg') no-repeat
   center center/cover;
   position: absolute;
   top: 0;
@@ -69,8 +69,15 @@ body {
 .form-background {
   background-color: #2d4059;
   color: #e5e5e5;
-  padding: 0.75rem 1.5rem;
+  padding: 2rem 4rem;
   margin: 1rem;
+}
+
+.form-background-inner {
+  background-color: #e5e5e5;
+  position: relative;
+  padding:inherit;
+  color: #030303;
 }
 
 .form-background p{
@@ -90,4 +97,20 @@ body {
 
 .btn:hover {
   opacity: 0.7;
+}
+
+.main_content {
+  background: #2d4059;
+  position: absolute;
+  height: 100%;
+  width: 85%;
+  left: 175px;
+}
+
+.main_content-inner {
+  background: #e5e5e5;
+  position: absolute;
+  height: 100%;
+  width: 85%;
+  left: 80px;
 }

@@ -1,0 +1,21 @@
+<ul>
+  {% for contact in object_list %}
+      <div class="contact-card">
+        <div class="contact-card-inner">
+          <h4>Name: <span><h3>{{contact.first_name}} {{contact.last_name}}</h3></span></h4>
+          <h6>Contact Number: <span><h5>{{contact.phone}}</h5></span></h6>
+          <h6>Alt Number: <span><h5>{{contact.alt_phone}}</h5></span></h6>
+        </div>
+      </div>
+  {% empty %}
+    <div class="container">
+      <div class="jumbotron">
+        <p></p>
+        <p></p>
+        <h4>You have no contacts yet.</h4>
+      </div>
+    </div>
+
+  {% endfor %}
+
+</ul>

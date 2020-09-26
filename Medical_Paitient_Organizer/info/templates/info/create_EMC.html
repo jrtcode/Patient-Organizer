@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  {% if user.is_authenticated %}
+    <div id="mySidenav" class="sidenav">
+      <h2>Info</h2>
+      <a href="#">Doctors</a>
+      <a href="#">Medications</a>
+      <a href="#">Medical Docs</a>
+    </div>
+    <div id="main" class="main_content">
+      <div class="main_content-inner">
+        <br>
+        <span class="arrow">back</span><h2>Emergency Contact</h2>
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <input type="submit" name="" value="add">
+        </form>
+      </div>
+    </div>
+  {% else %}
+    <script>
+      window.location.replace("/accounts/login/")
+    </script>
+  {% endif %}
+{% endblock %}

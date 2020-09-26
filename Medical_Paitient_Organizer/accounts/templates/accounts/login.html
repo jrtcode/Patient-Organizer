@@ -4,14 +4,16 @@
 {% block content %}
   <div class="container">
     <div class="form-background">
-      <h1>Login</h1>
-      <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" class="btn" value="Login">
-        <span><button class="btn"><a href="{% url "accounts:signup" %}">Signup</a></button></span>
-      </form>
-      <br>
+      <div class="form-background-inner">
+        <h1>Login</h1>
+        <form method="POST">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <input type="submit" class="btn" value="Login">
+          <span><button class="btn"><a href="{% url "accounts:signup" %}">Signup</a></button></span>
+        </form>
+        <br>
+      </div>
     </div>
   </div>
 {% endblock %}

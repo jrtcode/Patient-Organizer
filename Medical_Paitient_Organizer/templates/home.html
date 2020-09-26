@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  {% if user.is_authenticated %}
+    <div class="form-background">
+      <div class="form-background-inner">
+        <h3>Welcome, <span><h2>{{user.first_name}} {{user.last_name}}</h2></span></h3>
+      </div>
+    </div>
+  {% else %}
+    <script>
+      window.location.replace("/accounts/login/")
+    </script>
+  {% endif %}
+{% endblock %}
