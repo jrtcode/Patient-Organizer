@@ -1,4 +1,13 @@
 {% extends "base.html" %}
-{% block content %}]
-  <h1>Hello World!</h1>
+{% load static %}
+{% block content %}
+  {% if user.is_authenticated %}
+    <h1>Hello World!</h1>
+    <p>{{user.username}}</p>
+    <button type="button" class="btn"><a href="#">test button</a></button>
+  {% else %}
+    <script>
+      window.location.replace("/accounts/login/")
+    </script>
+  {% endif %}
 {% endblock %}

@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 {% extends "base.html" %}
-{% load bootstrap3 %}
 {% block title %}Login{% endblock %}
 {% block content %}
   <div class="container">
-    <h1>Login</h1>
-    <form method="POST">
-      {% csrf_token %}
-      {% bootstrap_form form %}
-      <input type="submit" class="btn btn-primary" value="Login">
-    </form>
+    <div class="form-background">
+      <h1>Login</h1>
+      <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="btn" value="Login">
+        <span><button class="btn"><a href="{% url "accounts:signup" %}">Signup</a></button></span>
+      </form>
+      <br>
+    </div>
   </div>
 {% endblock %}
