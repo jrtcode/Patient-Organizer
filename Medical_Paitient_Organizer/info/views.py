@@ -6,9 +6,6 @@ from .models import EmergencyContact
 from django.urls import reverse_lazy
 
 # Create your views here.
-class infoView(TemplateView,LoginRequiredMixin):
-    template_name = 'info/info.html'
-    model = EmergencyContact
 
 class EmergencyContactCreateView(CreateView,LoginRequiredMixin):
     template_name = 'info/create_EMC.html'
@@ -17,6 +14,6 @@ class EmergencyContactCreateView(CreateView,LoginRequiredMixin):
     success_url = reverse_lazy('info:info')
 
 class EmergencyContactListView(ListView,LoginRequiredMixin):
-    template_name = 'info/EMC_list.html'
+    template_name = 'info/EmergencyContact_list.html'
     model = EmergencyContact
     queryset = EmergencyContact.objects.all()
