@@ -78,3 +78,27 @@ class MedicationUpdateView(UpdateView,LoginRequiredMixin):
     template_name_suffix = '_update_form'
     model = Medication
     form_class = MedicationForm
+
+class MedicalDocListView(ListView, LoginRequiredMixin):
+    template_name = 'info/MedicalDoc_list.html'
+    model = MedicalDoc
+    context_object_name = 'MedDoc'
+    queryset = MedicalDoc.objects.all()
+
+class MedicalDocDetailView(DetailView,LoginRequiredMixin):
+    model = MedicalDoc
+    template_name = 'info/MedicalDoc_detail.html'
+
+class MedicalDocDeleteView(DeleteView,LoginRequiredMixin):
+    model = MedicalDoc
+    success_url = reverse_lazy('info:MedDoc_list')
+
+class MedicalDocUpdateView(UpdateView,LoginRequiredMixin):
+    template_name_suffix = '_update_form'
+    model = MedicalDoc
+    form_class = MedicalDocForm
+
+class MedicalDocCreateView(CreateView,LoginRequiredMixin):
+    template_name = 'info/create_MedicalDoc.html'
+    form_class = MedicalDocForm
+    success_url = reverse_lazy('info:MedDoc_list')

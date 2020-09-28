@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  {% if user.is_authenticated %}
+    {% include 'info/_info_nav.html' %}
+    <div id="main" class="main_content">
+      <div class="main_content-inner">
+        <br>
+        <h3>Medical Documents</h3>
+        <div class="grid-container">
+          <div class="grid-item">
+            <span class="back-sign"><a href="{% url 'info:MedDoc_list' %}">back</a></span>
+          </div>
+            <div class="grid-item">
+              <h4>{{ object.name }}</h4>
+              <span class="small-link"><a href="{% url "info:update_MedDoc" pk=object.pk %}">edit </a>
+              <a href="{% url "info:delete_MedDoc" pk=object.pk %}"> delete</a></span>
+              <div class="image-container">
+                <img src="{{object.file.url}}" width="400" height="400">
+                <span><a href="{{object.file.url}}"><button>Download</button></a></span>
+              </div>
+              <br>
+              <br>
+            </div>
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <script>
+      window.location.replace("/accounts/login/")
+    </script>
+  {% endif %}
+{% endblock %}

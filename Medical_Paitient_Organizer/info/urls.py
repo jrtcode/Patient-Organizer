@@ -19,4 +19,9 @@ urlpatterns = [
     path('Medication/<int:pk>', views.MedicationDetailView.as_view(),name='detail_med'),
     path('Medication/<int:pk>/update', views.MedicationUpdateView.as_view(), name='update_med'),
     path('Medication/<int:pk>/delete/confirm-delete', views.MedicationDeleteView.as_view(), name='delete_med'),
+    path('create/Medical-Document', views.MedicalDocCreateView.as_view(),name='create_MedDoc'),
+    path('Medical-Documents/', views.MedicalDocListView.as_view(),name='MedDoc_list'),
+    path('Medical-Document/<int:pk>', views.MedicalDocDetailView.as_view(),name='detail_MedDoc'),
+    path('Medical-Document/<int:pk>/update', views.MedicalDocUpdateView.as_view(), name='update_MedDoc'),
+    path('Medical-Document/<int:pk>/delete/confirm-delete', views.MedicalDocDeleteView.as_view(), name='delete_MedDoc'),
 ]

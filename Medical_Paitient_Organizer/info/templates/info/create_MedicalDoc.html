@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  {% if user.is_authenticated %}
+    {% include 'info/_info_nav.html' %}
+    <div id="main" class="main_content">
+      <div class="main_content-inner">
+        <br>
+        <span class="arrow"></span><h2>Medical Document</h2>
+        <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{ form }}
+          <input type="submit" name="" value="Save">
+        </form>
+      </div>
+    </div>
+  {% else %}
+    <script>
+      window.location.replace("/accounts/login/")
+    </script>
+  {% endif %}
+{% endblock %}

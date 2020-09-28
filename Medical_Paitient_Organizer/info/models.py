@@ -66,7 +66,7 @@ class DoctorContact(models.Model):
 
 class Medication(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    name = models.CharField(max_length=260)
+    name = models.CharField(max_length=255)
     prescription = models.TextField()
 
     def __str__(self):
@@ -77,10 +77,8 @@ class Medication(models.Model):
 
 class MedicalDoc(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=255)
     file = models.FileField(upload_to='files/medical-docs')
 
-    def __str__(self):
-        return self.file
-
     def get_absolute_url(self):
-        return reverse("info:detail_medDoc", kwargs={"pk": self.pk})
+        return reverse("info:detail_MedDoc", kwargs={"pk": self.pk})

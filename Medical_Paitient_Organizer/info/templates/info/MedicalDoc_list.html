@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  {% if user.is_authenticated %}
+    {% include 'info/_info_nav.html' %}
+    <div id="main" class="main_content">
+      <div class="main_content-inner">
+        <br>
+        <div class="site-title">
+          <h3>{{user.first_name}}'s Medical Documents</h3>
+        </div>
+        <div class="grid-container">
+          <div class="grid-item dotme">
+            <span class="add-sign"><a href="{% url 'info:create_MedDoc' %}">Add</a></span>
+          </div>
+            {% for doc in MedDoc %}
+              {% if user.id == doc.user.id %}
+                <div class="grid-item">
+                  <div class="contact-card">
+                    <div class="contact-card-inner">
+                      <h4>{{doc.name}}</h4>
+                      <br>
+                      <div class="image-container">
+                        <img src="{{ doc.file.url }}" width="150" height="150">
+                      </div>
+                      <br>
+                      <span class="small-link"><a href="{% url 'info:detail_MedDoc' pk=doc.pk %}">detail </a></span>
+                      <span class="small-link"><a href="{% url 'info:delete_MedDoc' pk=doc.pk %}"> delete</a></span>
+                      <span class="small-link"><a href="{{object.file.url}}"><button>Download</button></a></span>
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <script>
+      window.location.replace("/accounts/login/")
+    </script>
+  {% endif %}
+{% endblock %}
