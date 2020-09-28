@@ -12,12 +12,12 @@ class DoctorContactForm(forms.ModelForm):
         model = DoctorContact
         fields = '__all__'
 
-class MedicationForm(models.ModelForm):
+class MedicationForm(forms.ModelForm):
     class Meta():
         model = Medication
         fields = '__all__'
 
-class MedicalDocForm(models.ModelForm):
+class MedicalDocForm(forms.ModelForm):
     class Meta():
         model = MedicalDoc
         fields = '__all__'

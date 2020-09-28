@@ -30,8 +30,12 @@
           href="{% static 'css/menu.css' %}">
 
     <!-- # Project JS Script -->
-    <script type="text/javascript" src="{% static 'js/master.js' %}">
+    <script type="text/javascript" src="{% static 'js/master.js' %}"></script>
 
+    <script>
+    function goBack() {
+    window.history.back();
+    }
     </script>
   </head>
   <body>
@@ -44,7 +48,6 @@
       <div class="menu">
         <div>
           <div>
-            <p>user_id:{{user.id}}</p>
             <ul>
               <li><a href="{% url 'home' %}">Home</a></li>
               <li><a href="#">Calendar</a></li>

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  {% if user.is_authenticated %}
+    {% include 'info/_info_nav.html' %}
+    <div id="main" class="main_content">
+      <div class="main_content-inner">
+        <br>
+        <h3>Doctors Contacts</h3>
+        <div class="grid-container">
+          <div class="grid-item">
+            <span class="back-sign"><a href="{% url 'info:med_list' %}">back</a></span>
+          </div>
+            <div class="grid-item">
+              <div class="contact-card">
+                <div class="contact-card-inner">
+                  <h4>{{object.name}}</h4>
+                  <span class="small-font"><a href="{% url "info:update_med" pk=object.pk %}">edit </a></span>
+                  <span class="small-font"><a href="{% url "info:delete_med" pk=object.pk %}"> delete</a></span>
+                  <h6>Prescription/Instructions: <span><h5>{{object.prescription}}</h5></span></h6>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <script>
+      window.location.replace("/accounts/login/")
+    </script>
+  {% endif %}
+{% endblock %}

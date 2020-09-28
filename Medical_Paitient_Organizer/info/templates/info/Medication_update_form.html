@@ -6,7 +6,10 @@
     <div id="main" class="main_content">
       <div class="main_content-inner">
         <br>
-        <span class="arrow">back</span><h2>Emergency Contact</h2>
+        <span class="back-sign"><button onclick="goBack()">Go Back</button></span>
+        <div class="site-title">
+          <h3>Medicine</h3>
+        </div>
         <form method="post">
           {% csrf_token %}
           {{ form.as_p }}

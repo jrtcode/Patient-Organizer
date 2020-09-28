@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  {% if user.is_authenticated %}
+    {% include 'info/_info_nav.html' %}
+    <div id="main" class="main_content">
+      <div class="main_content-inner">
+        <br>
+        <h3>Emergency Contacts</h3>
+        <div class="grid-container">
+          <div class="grid-item">
+            <span class="back-sign"><a href="{% url 'info:info' %}">back</a></span>
+          </div>
+            <div class="grid-item">
+              <div class="contact-card">
+                <div class="contact-card-inner">
+                  <h4>Name: <span><h3>{{object.first_name}} {{object.last_name}}</h3></span></h4>
+                  <span class="small-font"><a href="{% url "info:update_EMC" pk=object.pk %}">edit </a></span>
+                  <span class="small-font"><a href="#"> delete</a></span>
+                  <h6>Contact Number: <span><h5>{{object.phone}}</h5></span></h6>
+                  <h6>Alt Number: <span><h5>{{object.alt_phone}}</h5></span></h6>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <script>
+      window.location.replace("/accounts/login/")
+    </script>
+  {% endif %}
+{% endblock %}

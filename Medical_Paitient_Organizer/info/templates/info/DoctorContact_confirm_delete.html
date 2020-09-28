@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  {% if user.is_authenticated %}
+    <div class="form">
+      <div class="form-inner">
+        <h4>Are you sure you want to delete Dr. {{object.last_name}}'s contact information?</h4>
+        <form method="post">
+          {% csrf_token %}
+          <input type="submit" value="Confirm Delete" class="btn btn-danger">
+          <button type="button" name="button" class="btn btn-default"><a href="{% url 'info:doc_list' %}"
+            >Cancel</a></button>
+        </form>
+      </div>
+    </div>
+  {% else %}
+    <script>
+      window.location.replace("/accounts/login/")
+    </script>
+  {% endif %}
+{% endblock %}

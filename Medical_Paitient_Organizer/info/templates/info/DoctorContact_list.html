@@ -7,20 +7,20 @@
       <div class="main_content-inner">
         <br>
         <div class="site-title">
-          <h3>{{user.first_name}}'s Emergency Contacts</h3>
+          <h3>{{user.first_name}}'s Doctors' Contact Information</h3>
         </div>
         <div class="grid-container">
           <div class="grid-item dotme">
-            <span class="add-sign"><a href="{% url 'info:create_EMC' %}">Add</a></span>
+            <span class="add-sign"><a href="{% url 'info:create_doc' %}">Add</a></span>
           </div>
             {% for contact in object_list %}
               {% if user.id == contact.user.id %}
                 <div class="grid-item">
                   <div class="contact-card">
                     <div class="contact-card-inner">
-                      <h4>Name: <span><h3>{{contact.first_name}} {{contact.last_name}}</h3></span></h4>
-                      <span class="small-link"><a href="{% url 'info:detail_EMC' pk=contact.pk %}">detail </a></span>
-                      <span class="small-link"><a href="{% url 'info:delete_EMC' pk=contact.pk %}"> delete</a></span>
+                      <h4>Name: <span><h3>Dr. {{contact.first_name}} {{contact.last_name}}</h3></span></h4>
+                      <span class="small-link"><a href="{% url 'info:detail_doc' pk=contact.pk %}">detail </a></span>
+                      <span class="small-link"><a href="{% url 'info:delete_doc' pk=contact.pk %}"> delete</a></span>
                     </div>
                   </div>
                 </div>

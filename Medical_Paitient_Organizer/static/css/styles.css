@@ -28,6 +28,7 @@ body {
   margin: auto;
   overflow: hidden;
   padding: 0 3rem;
+  overflow-x: hidden;
 }
 
 .showcase {
@@ -101,10 +102,14 @@ body {
 
 .main_content {
   background: #2d4059;
+  flex-flow: row;
   position: absolute;
   height: 100%;
-  width: 85%;
-  left: 175px;
+  width: 84.7%;
+  left: 176px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  text-align: left;
 }
 
 .main_content-inner {
@@ -113,4 +118,57 @@ body {
   height: 100%;
   width: 85%;
   left: 80px;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex: auto;
+  flex-direction: column;
+}
+
+.grid-container {
+  display: grid;
+  height: 92%;
+  padding: 0.5rem .5rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 75px;
+  grid-auto-columns: 75px;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.grid-item {
+  display: grid;
+  height: 185px;
+  padding: 0.5rem 1rem;
+  grid-template-rows: repeat(1, 1fr);
+  justify-content: center;
+  align-items: center;
+}
+
+.dotme{
+  border: 5px dashed rgba(45, 65, 89, 0.45);
+  border-radius: 25%;
+}
+
+.small-link a {
+  font-size: 9px;
+}
+
+.contact-card {
+  width: 245px;
+  background: #2d4059;
+  padding: 1em 1em;
+  margin: 0;
+}
+
+.contact-card-inner {
+  width: 100%;
+  background-color: #e5e5e5;
+  position: relative;
+  padding: 1rem 2rem;
+  padding:inherit;
+  color: #030303;
+}
+
+.site-title {
+  text-align: center;
 }
