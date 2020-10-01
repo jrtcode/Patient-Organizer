@@ -11,7 +11,7 @@
         </div>
         <div class="grid-container">
           <div class="grid-item dotme">
-            <span class="add-sign"><a href="{% url 'info:create_MedDoc' %}">Add</a></span>
+            <span><a href="{% url 'info:create_MedDoc' %}"><div class="add-sign"></div></a></span>
           </div>
             {% for doc in MedDoc %}
               {% if user.id == doc.user.id %}

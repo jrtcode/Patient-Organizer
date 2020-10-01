@@ -3,10 +3,14 @@
 {% block content %}
   {% if user.is_authenticated %}
     {% include 'info/_info_nav.html' %}
-    <div id="main" class="main_content">
-      <div class="main_content-inner">
-        <br>
-        <span class="arrow">back</span><h2>Emergency Contact</h2>
+    <div id="main" class="form-background">
+      <div class="form-background-inner">
+        <div class="form-header">
+          <div class="circle">
+            <div class="arrow left-arrow" onclick="goBack()"></div>
+          </div>
+          <h2>Emergency Contact</h2>
+        </div>
         <form method="post">
           {% csrf_token %}
           {{ form.as_p }}

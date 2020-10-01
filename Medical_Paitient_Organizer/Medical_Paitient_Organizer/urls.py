@@ -26,5 +26,6 @@ urlpatterns = [
     path('', views.HomeView.as_view(),name='home'),
     path('accounts/',include('accounts.urls'),name='accounts'),
     path('accounts/',include('django.contrib.auth.urls')),
+    path('calendar/',include('cal.urls')),
     path('info/', include("info.urls")),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

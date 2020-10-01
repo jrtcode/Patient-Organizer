@@ -3,13 +3,17 @@
 {% block content %}
   {% if user.is_authenticated %}
     {% include 'info/_info_nav.html' %}
-    <div id="main" class="main_content">
-      <div class="main_content-inner">
-        <br>
-        <span class="arrow"></span><h2>Medical Document</h2>
-        <form method="post" enctype="multipart/form-data">
+    <div id="main" class="form-background">
+      <div class="form-background-inner">
+        <div class="form-header">
+          <div class="circle">
+            <div class="arrow left-arrow" onclick="goBack()"></div>
+          </div>
+          <h2>Upload Medical Document</h2>
+        </div>
+        <form method="post">
           {% csrf_token %}
-          {{ form }}
+          {{ form.as_p }}
           <input type="submit" name="" value="Save">
         </form>
       </div>

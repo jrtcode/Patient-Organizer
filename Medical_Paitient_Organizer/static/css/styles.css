@@ -23,7 +23,7 @@ body {
   line-height: 1.4;
 }
 
-.container {
+.container-main {
   max-width: 960px;
   margin: auto;
   overflow: hidden;
@@ -81,14 +81,14 @@ body {
   color: #030303;
 }
 
-.form-background p{
-  font-size: 1rem;
+.form-background-inner p{
+  font-size: 10px;
 }
 
 .btn {
   display: inline-block;
   border: none;
-  background-color: #e5e5e5;
+  background-color: transparent;
   color: #030303;
   padding: 0.75rem 1.5rem;
   margin-top: 1rem;
@@ -98,6 +98,7 @@ body {
 
 .btn:hover {
   opacity: 0.7;
+  background-color: #2d4059;
 }
 
 .main_content {
@@ -105,8 +106,8 @@ body {
   flex-flow: row;
   position: absolute;
   height: 100%;
-  width: 84.7%;
-  left: 176px;
+  width: 90%;
+  left: 170px;
   overflow-x: hidden;
   text-align: left;
 }
@@ -123,6 +124,17 @@ body {
   flex-direction: column;
 }
 
+#main_content_calendar{
+  background: #e5e5e5;
+  position: absolute;
+  height: 164vh;
+  width: 85%;
+  left: 80px;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex: auto;
+  flex-direction: column;
+}
 .grid-container {
   display: grid;
   height: 92%;
@@ -144,9 +156,27 @@ body {
 }
 
 .dotme{
-  border: 5px dashed rgba(45, 65, 89, 0.45);
+  border: 5px dashed #b9b3b3;
   border-radius: 25%;
 }
+.add-sign {
+   background: #b9b3b3;
+   border-radius: 25%;
+   height: 100px;
+   position: relative;
+   width: 20px;
+ }
+
+.add-sign:after {
+    background: #b9b3b3;
+    content: "";
+    border-radius: 25%;
+    height: 20px;
+    left: -40px;
+    position: absolute;
+    top: 40px;
+    width: 100px;
+  }
 
 .small-link a {
   font-size: 9px;
@@ -175,4 +205,138 @@ body {
 .image-container {
   max-width: 100%;
   height: auto;
+}
+
+.calendar {
+  width: 98%;
+  margin: auto;
+  font-size: 13px;
+}
+
+.calendar tr, .calendar td {
+  border: 1px solid black;
+}
+
+.calendar th {
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.calendar td {
+  width: 200px;
+  height: 150px;
+  padding: 20px 0px 0px 5px;
+}
+
+.month {
+  font-size: 25px;
+}
+
+.date {
+  font-size: 12px;
+  display:grid;
+  text-align: left;
+  padding-right:5px;
+  align-content: start;
+}
+
+.cal-ul {
+  height: 100%;
+  padding: 0px 5px 0px 20px;
+}
+
+a {
+  color: #17a2b8;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.right2 {
+  font-size: 11px;
+  float: right;
+  font-weight: bolder;
+}
+
+.left2 {
+  padding-left: 101px;
+  float: left;
+}
+
+.right3 {
+  font-size: 10px;
+  float: right;
+  font-weight: bold;
+}
+
+.left3 {
+  font-size: 10px;
+  float: left;
+  font-weight: bold;
+}
+
+
+.form-me {
+  margin: auto;
+  font-size: 13px;
+}
+
+.form-me input, .form-me select, .form-me textarea {
+  border-radius: 5px;
+  border: 1px solid #17a2b8;
+  outline: none;
+  background: none;
+  padding: 5px;
+  width: 100%;
+}
+
+
+#main_calendar {
+  background: #2d4059;
+  flex-flow: row;
+  position: absolute;
+  height: 100%;
+  width: 90%;
+  left: 170px;
+  overflow-x: hidden;
+  text-align: left;
+}
+
+.btn-center a{
+  font-size: 12px;
+  text-align: center;
+  display: grid;
+  width:100px;
+}
+
+.cal_btn {
+  display:flex;
+  justify-content: space-between
+}
+
+.cal-event {
+  background-color:#a5d2a5;
+  border-radius:15%;
+
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+.left-arrow {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.form-header{
+  align-content: flex-start;
 }

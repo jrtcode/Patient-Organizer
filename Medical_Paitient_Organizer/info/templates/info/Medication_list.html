@@ -11,7 +11,7 @@
         </div>
         <div class="grid-container">
           <div class="grid-item dotme">
-            <span class="add-sign"><a href="{% url 'info:create_med' %}">Add</a></span>
+            <span><a href="{% url 'info:create_med' %}"><div class="add-sign"></div></a></span>
           </div>
             {% for object in object_list %}
               {% if user.id == object.user.id %}

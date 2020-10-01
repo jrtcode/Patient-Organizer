@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  {% if user.is_authenticated %}
+    <div id="main_calendar" class="main_content">
+      <div id="main_content_calendar" class="main_content-inner">
+        {% include 'info/_info_nav.html' %}
+        <div class="cal_btn">
+        	<a class="btn btn-info left" href="{% url 'cal:calendar' %}?{{ prev_month }}"> Previous Month </a>
+          <a class="btn btn-info btn_center" href="{% url 'cal:event_new' %}">New Event</a>
+          <a class="btn btn-info right" href="{% url 'cal:calendar' %}?{{ next_month }}"> Next Month </a>
+        </div>
+        {{calendar}}
+      </div>
+    </div>
+  {% else %}
+    <script>
+      window.location.replace("/accounts/login/")
+    </script>
+  {% endif %}
+{% endblock %}
